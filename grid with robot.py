@@ -71,7 +71,7 @@ def checkForwardAndGo():
     elif tempPosition[1] >= len(grid) or tempPosition[1] < 0:
         return False
      # if it's valid, move the robot to the tempPosition
-    elif grid[[tempPosition]] == Tile.SOLID:
+    elif grid[tempPosition[0]][tempPosition[1]] == Tile.SOLID:
         return False
     # return True if all False conditions 
     else:
