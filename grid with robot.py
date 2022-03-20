@@ -107,9 +107,9 @@ def navigateGrid():
                 print("Right turn failed, Stopping")
                 return
             else:
-                print("Right turn succeeded!" + str(robotPosition))
+                print("Right turn succeeded! new pos: " + str(robotPosition))
         else:
-            print("Left turn succeeded!" + str(robotPosition))
+            print("Left turn succeeded! new pos: " + str(robotPosition))
 
 def printGrid():
     global robotPosition
