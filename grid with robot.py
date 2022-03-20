@@ -105,6 +105,7 @@ def navigateGrid():
             if not checkForwardAndGo():
                 # Right didn't work either
                 print("Right turn failed, Stopping")
+                return
             else:
                 print("Right turn succeeded!" + str(robotPosition))
         else:
