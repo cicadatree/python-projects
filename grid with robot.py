@@ -84,11 +84,16 @@ def navigateGrid():
     global robotDirection
     global grid
 
-    #recursive function that turns left or right, and checks to move forward
-    def recurse():
-        recurse()
-
-
-    if checkForwardAndGo() == True:
-
-
+    # Function that repeatedly turns left or right, and checks to move forward
+    while True:
+        # Start by seeing if it can turn left and move forward
+        print("Currently at: " + str(robotPosition))
+        turnLeft()
+        if not checkForwardAndGo():
+            # Left didn't work, so try right
+            turnRight() # back to original direction
+            turnRight() # turning to the right, relative to original direction
+            if not checkForwardAndGo():
+                # Right didn't work either
+                print("Stopped at" + str(robotPosition))
+                return
