@@ -97,3 +97,7 @@ def navigateGrid():
                 # Right didn't work either
                 print("Stopped at" + str(robotPosition))
                 return
+
+# Python best practices to call the main function from a __main__ check
+if __name__ == "__main__":
+    navigateGrid()
