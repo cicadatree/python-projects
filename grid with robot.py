@@ -105,8 +105,17 @@ def printGrid():
     global robotDirection
     global grid
 
-    for row in grid:
-        print(" ".join(str(x) for x in row))
+    for rowNum, row in enumerate(grid):
+        line = ''
+        for colNum, col in enumerate(row):
+            if rowNum == robotPosition[1] and colNum == robotPosition[0]:
+                line += 'R'
+            else:
+                line += str(grid[rowNum][colNum])
+            if colNum < len(row):
+                line += ' '
+
+        print(line)
 
 
 # Python best practices to call the main function from a __main__ check
