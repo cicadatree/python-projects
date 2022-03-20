@@ -87,7 +87,8 @@ def navigateGrid():
     global grid
 
     # Function that repeatedly turns left or right, and checks to move forward
-    while True:
+    # Limiting it to 5 iterations, for now
+    for i in range(5):
         # Start by seeing if it can turn left and move forward
         print()
         printGrid()
