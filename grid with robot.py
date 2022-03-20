@@ -65,10 +65,10 @@ def checkForwardAndGo():
     tempPosition = goForward(robotPosition,robotDirection)
     
     # need to check if the X element of the position is in the array's range and not less than zero
-    if tempPosition[0] > len(len(tempPosition)) or tempPosition[0] < 0:
+    if tempPosition[0] >= len(grid[0]) or tempPosition[0] < 0:
         return False
     # need to check if the Y element of the position is in the array's range and not less than zero
-    elif tempPosition[1] > len(tempPosition) or tempPosition[1] < 0:
+    elif tempPosition[1] >= len(grid) or tempPosition[1] < 0:
         return False
      # if it's valid, move the robot to the tempPosition
     elif grid[[tempPosition]] == Tile.SOLID:
