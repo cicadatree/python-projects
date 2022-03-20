@@ -24,6 +24,7 @@ up = 0
 right = 1
 down = 2
 left = 3
+dirStrings = ['Up', 'Right', 'Down', 'Left']
 robotPosition = [0,0]   
 robotDirection = up
 
@@ -88,18 +89,24 @@ def navigateGrid():
     # Function that repeatedly turns left or right, and checks to move forward
     while True:
         # Start by seeing if it can turn left and move forward
-        print("Currently at: " + str(robotPosition))
+        print()
         printGrid()
+        print("Robot direction is: " + dirStrings[robotDirection])
 
         turnLeft()
+        print("Trying Left turn")
         if not checkForwardAndGo():
             # Left didn't work, so try right
+            print("Left turn failed, trying Right turn")
             turnRight() # back to original direction
             turnRight() # turning to the right, relative to original direction
             if not checkForwardAndGo():
                 # Right didn't work either
-                print("Stopped at" + str(robotPosition))
-                return
+                print("Right turn failed, Stopping")
+            else:
+                print("Right turn succeeded!" + str(robotPosition))
+        else:
+            print("Left turn succeeded!" + str(robotPosition))
 
 def printGrid():
     global robotPosition
