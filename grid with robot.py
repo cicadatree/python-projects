@@ -45,15 +45,16 @@ def turnRight():
 
 # function for moving the robot forward one tile in the direction it's facing
 def goForward(position,direction):
+    newPosition = list(position) # Create a copy to modify and return
     if direction == 0: #up
-        position[1] -= 1
+        newPosition[1] -= 1
     elif direction == 1: #right
-        position[0] += 1
+        newPosition[0] += 1
     elif direction == 2: #down
-        position[1] += 1
+        newPosition[1] += 1
     elif direction == 3: #left
-        position[0] -= 1
-    return position
+        newPosition[0] -= 1
+    return newPosition
 
 # function for checking if the tile which the robot is facing is EMPTY (available) or SOLID (unavaiable), returns true or false
 def checkForwardAndGo():
