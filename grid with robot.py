@@ -91,8 +91,9 @@ def navigateGrid():
     for i in range(5):
         # Start by seeing if it can turn left and move forward
         print()
-        printGrid()
         print("Robot direction is: " + dirStrings[robotDirection])
+        printGrid()
+        print()
 
         turnLeft()
         print("Trying Left turn")
