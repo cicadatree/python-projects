@@ -98,16 +98,20 @@ def navigateGrid():
         turnLeft()
         print("Trying Left turn")
         if not checkForwardAndGo():
-            # Left didn't work, so try right
-            print("Left turn failed, trying Right turn")
+            # Left didn't work, so try straight ahead
+            print("Left turn failed, trying Straight ahead")
             turnRight() # back to original direction
-            turnRight() # turning to the right, relative to original direction
             if not checkForwardAndGo():
-                # Right didn't work either
-                print("Right turn failed, Stopping")
-                return
+                print("Straight ahead turn failed, trying Right")
+                turnRight() # turning to the right, relative to original direction
+                if not checkForwardAndGo():
+                    # Right didn't work either
+                    print("Right turn failed, Stopping")
+                    return
+                else:
+                    print("Right turn succeeded! new pos: " + str(robotPosition))
             else:
-                print("Right turn succeeded! new pos: " + str(robotPosition))
+                print("Straight ahead succeeded! new pos: " + str(robotPosition))
         else:
             print("Left turn succeeded! new pos: " + str(robotPosition))
 
