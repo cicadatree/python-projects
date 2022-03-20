@@ -80,6 +80,8 @@ def checkForwardAndGo():
         robotPosition = tempPosition
         return True
 
+
+
 # main function 
 def navigateGrid(): 
     global robotPosition
