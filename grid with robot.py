@@ -26,7 +26,7 @@ down = 2
 left = 3
 dirStrings = ['Up', 'Right', 'Down', 'Left']
 robotPosition = [0,0]   
-robotDirection = up
+robotDirection = right
 
 # function for turning the robot's face (robotDirection) once to the left
 def turnLeft():
