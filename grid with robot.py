@@ -61,8 +61,6 @@ def checkForwardAndGo():
     global robotPosition
     global grid
 
-    # call grid to check if tempPosition is Tile.SOLID later
-    grid 
     # need to get the position I'm trying to move to
     tempPosition = goForward(robotPosition,robotDirection)
     
@@ -86,9 +84,6 @@ def navigateGrid():
     global robotDirection
     global grid
 
-    grid
-    robotPosition
-    
     #recursive function that turns left or right, and checks to move forward
     def recurse():
         recurse()
