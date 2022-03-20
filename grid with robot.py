@@ -88,6 +88,8 @@ def navigateGrid():
     while True:
         # Start by seeing if it can turn left and move forward
         print("Currently at: " + str(robotPosition))
+        printGrid()
+
         turnLeft()
         if not checkForwardAndGo():
             # Left didn't work, so try right
@@ -97,6 +99,15 @@ def navigateGrid():
                 # Right didn't work either
                 print("Stopped at" + str(robotPosition))
                 return
+
+def printGrid():
+    global robotPosition
+    global robotDirection
+    global grid
+
+    for row in grid:
+        print(" ".join(str(x) for x in row))
+
 
 # Python best practices to call the main function from a __main__ check
 if __name__ == "__main__":
