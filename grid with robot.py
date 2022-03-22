@@ -11,6 +11,7 @@ class Tile(Enum):
     SOLID = 0
     EMPTY = 1
     
+counter = 0
 grid = [
     [1,0,0,0,0,0,0],
     [1,0,1,1,1,0,0],
@@ -80,22 +81,25 @@ def checkForwardAndGo():
         robotPosition = tempPosition
         return True
 
-
-
 # main function 
-def navigateGrid(): 
+def main(): 
     global robotPosition
-    global robotDirection
     global grid
 
     grid
     robotPosition
     
-    #recursive function that turns left or right, and checks to move forward
-    def recurse():
-        recurse()
-
-
-    if checkForwardAndGo() == True:
-
+    #recursive function that checks forward and goes, or moves left once
+    def main():
+        global counter 
+        if checkForwardAndGo == True:
+            return
+        else:
+            counter += 1
+            print(counter)
+            turnLeft()
+            main()
+            
+            
+main() 
 
