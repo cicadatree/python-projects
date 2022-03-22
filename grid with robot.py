@@ -29,24 +29,23 @@ dirStrings = ['Up', 'Right', 'Down', 'Left']
 robotPosition = [0,0]   
 robotDirection = right
 
-# function for turning the robot's face (robotDirection) once to the left
-def turnLeft():
+def turnLeft(): # function for turning the robot's face (robotDirection) once to the left
     global robotDirection 
     robotDirection -= 1
     if robotDirection == -1:
         robotDirection = 3
     return
 
-# function for turning robot's face (robotDirection) once to the right
-def turnRight():
+
+def turnRight(): # function for turning robot's face (robotDirection) once to the right
     global robotDirection 
     robotDirection += 1
     if robotDirection == 4:
         robotDirection = 0
     return
 
-# function for moving the robot forward one tile in the direction it's facing
-def goForward(position,direction):
+
+def goForward(position,direction): # function for moving the robot forward one tile in the direction it's facing
     newPosition = list(position) # Create a copy to modify and return
     if direction == 0: #up
         newPosition[1] -= 1
@@ -58,52 +57,28 @@ def goForward(position,direction):
         newPosition[0] -= 1
     return newPosition
 
-# function for checking if the tile which the robot is facing is EMPTY (available) or SOLID (unavaiable), returns true or false
-def checkForwardAndGo():
+def checkForwardAndGo(): # function for checking if the tile which the robot is facing is EMPTY (available) or SOLID (unavaiable), returns true or false
     global robotDirection
     global robotPosition
     global grid
 
-    # need to get the position I'm trying to move to
-    tempPosition = goForward(robotPosition,robotDirection)
+    tempPosition = goForward(robotPosition,robotDirection) # need to get the position I'm trying to move to
     
-    # need to check if the X element of the position is in the array's range and not less than zero
-    if tempPosition[0] >= len(grid[0]) or tempPosition[0] < 0:
+    if tempPosition[0] >= len(grid[0]) or tempPosition[0] < 0: # need to check if the X element of the position is in the array's range and not less than zero
         return False
-    # need to check if the Y element of the position is in the array's range and not less than zero
-    elif tempPosition[1] >= len(grid) or tempPosition[1] < 0:
+    elif tempPosition[1] >= len(grid) or tempPosition[1] < 0: # need to check if the Y element of the position is in the array's range and not less than zero
         return False
-     # if it's valid, move the robot to the tempPosition
-    elif grid[tempPosition[1]][tempPosition[0]] == Tile.SOLID.value:
+    elif grid[tempPosition[1]][tempPosition[0]] == Tile.SOLID.value: # if it's valid, move the robot to the tempPosition
         return False
-    # return True if all False conditions 
-    else:
+    else: # return True if all False conditions 
         robotPosition = tempPosition
         return True
 
-# main function 
-def main(): 
+
+def main(): # main function  
     global robotPosition
     global grid
 
-<<<<<<< HEAD
-    grid
-    robotPosition
-    
-    #recursive function that checks forward and goes, or moves left once
-    def main():
-        global counter 
-        if checkForwardAndGo == True:
-            return
-        else:
-            counter += 1
-            print(counter)
-            turnLeft()
-            main()
-            
-            
-main() 
-=======
     # Function that repeatedly turns left or right, and checks to move forward
     # Limiting it to 5 iterations, for now
     for i in range(5):
@@ -150,8 +125,7 @@ def printGrid():
 
         print(line)
 
->>>>>>> 32eb34a8537853f459c31ccc7ee9ada2bdcb9fcd
 
 # Python best practices to call the main function from a __main__ check
-if __name__ == "__main__":
-    navigateGrid()
+if __name__ == "__main__": 
+    main()
