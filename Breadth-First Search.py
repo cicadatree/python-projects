@@ -17,13 +17,13 @@ graph = {
 visited = [] # initaite list for visited nodes
 queue = [] # initialize list for the queue
 
-def bfs(visited, graph, Firstnode):
+def bfs(visited, graph, Firstnode): # breadth-first search function;
     visited.append(Firstnode)
     queue.append(Firstnode)
 
     while queue:
         m = queue.pop(0)
-        print (m, end= " ")
+        print (m, end = " ")
 
         for neighbour in graph[m]:
             if neighbour not in visited:
